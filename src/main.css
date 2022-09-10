@@ -109,11 +109,11 @@ nav button {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-blue-600;
+  @apply bg-orange-800;
   @apply shadow-lg;
 }
 

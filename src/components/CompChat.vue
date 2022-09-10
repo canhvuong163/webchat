@@ -13,18 +13,14 @@
 
     <div class="bottom">
         <div class="container-sm">
-            <form v-if="isLogin" @submit.prevent = "send">
+            <form v-if="isLogin" @submit.prevent="send">
                 <input v-model="message" placeholder="Nhập tin nhắn!" required />
                 <button type="submit">
                     <SendIcon />
                 </button>
-                
-
             </form>
-            
         </div>
     </div>
-
 </template>
 
 <script>
@@ -36,11 +32,11 @@ import SendIcon from "./SendIcon.vue";
 
 export default {
     components: {
-    Message,
-    SendIcon,
-},
+        Message,
+        SendIcon,
+    },
     setup() {
-        const {messages , sendMessage } = useChat()
+        const { messages, sendMessage } = useChat()
         const { user, isLogin } = useAuth()
 
         const bottom = ref(null)
@@ -56,12 +52,12 @@ export default {
 
 
         const message = ref('')
-        const send = () => { 
+        const send = () => {
             sendMessage(message.value)
             message.value = ''
         }
 
-        
+
         return { user, isLogin, messages, message, send, bottom }
     }
 
